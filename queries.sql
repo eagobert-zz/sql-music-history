@@ -20,6 +20,17 @@ VALUES
 (null, "Hold Up", 400, "09/16/2016", 6, 28, 23)
 
 -- Q5: Write a SELECT query that provides the song titles, album title, and artist name for all of the data you just entered in. Use the LEFT JOIN keyword sequence to connect the tables, and the WHERE keyword to filter the results to the album and artist you added.
+SELECT 
+	Artist.ArtistName,
+	Album.Title,
+	Song.Title
+FROM Artist
+LEFT JOIN Album ON Album.ArtistId = Artist.ArtistId
+LEFT JOIN Song ON Song.AlbumId = Album.AlbumId
+WHERE 
+	Album.Title = "Lemonade"
+AND
+	Artist.ArtistName = "Beyonce"
 
 -- Q6: Write a SELECT statement to display how many songs exist for each album. You'll need to use the COUNT() function and the GROUP BY keyword sequence.
 
