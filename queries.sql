@@ -33,6 +33,14 @@ AND
 	Artist.ArtistName = "Beyonce"
 
 -- Q6: Write a SELECT statement to display how many songs exist for each album. You'll need to use the COUNT() function and the GROUP BY keyword sequence.
+SELECT
+	Album.Title,
+	count(Song.SongId) as "Song Count"
+FROM
+	Song
+LEFT JOIN Album ON Album.AlbumId = Song.AlbumId
+GROUP BY
+	Album.Title
 
 -- Q7: Write a SELECT statement to display how many songs exist for each artist. You'll need to use the COUNT() function and the GROUP BY keyword sequence.
 
